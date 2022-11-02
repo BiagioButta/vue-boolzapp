@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- bg -->
+    <div class="app-container debug">
+        <!-- whatsapp -->
+        <div id="app" class="debug row pt-5">
+            <!-- colonna contatti -->
+            <div class="col-4 debug bg-white">
+                <!-- profilo personale e ricerca -->
+                <div class="row row-cols-1">
+
+                    <div class="col debug bg-grey2 h-70px w-100 d-flex align-items-center border-end">
+                        <div class="w-75">
+                            <img src="./img/avatar_1.jpg" alt="">
+                        </div>
+                    
+                        <div class="d-flex justify-content-around w-25">
+                            <i class="fa-solid fa-spinner"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="col debug bg-white h-70px d-flex align-items-center justify-content-between border-bottom">
+                        <input type="text" placeholder="   Cerca o inizia una nuova chat" class="bg-grey2 border-0 rounded-3 w-100 h-50">
+                        <i class="fa-solid fa-filter"></i>
+                    </div>
+
+                </div>
+                <!-- contatti chat -->
+                <div class="row row-cols-1 chat-hover">
+
+                    <div v-for="(contatto,index) in contacts" :key="index" class="col debug d-flex chat-contact align-items-center h-80px border-bottom" @click="chatSelezionata = index">
+
+                        <div class="me-2">
+                            <img :src="`./img/avatar${contatto.avatar}.jpg`" alt="">
+                        </div>
+
+                        <div class="row row-cols-1 w-100 h-50px">
+
+                            <div class="col d-flex justify-content-between h-25px">
+                                <div>{{contatto.name}}</div>
+                                <div>{{contatto.messages[contatto.messages.length-1].date}}</div>
+                            </div>
+                            <div class="col d-flex justify-content-between h-25px">
+                                <div>{{contatto.messages[contatto.messages.length-1].message}}</div>
+                                <div>
+                                    <select class="select-chat-contatto">
+                                        <option selected></option>
+                                        <option value="1">Archivia chat</option>
+                                        <option value="2">Disattiva notifiche</option>
+                                        <option value="3">Elimina chat</option>
+                                        <option value="4">Fissa chat</option>
+                                        <option value="5">Segna come da leggere</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- colonna chat -->
+            <div class="col-8 debug">
+
+                <div class="row h-100 row-cols-1">
+
+                    <div class="col debug bg-grey2 h-70px d-flex align-items-center justify-content-between">
+                        <div class="w-75 d-flex align-items-center">
+                            <img src="./img/avatar_1.jpg" alt="">
+                            <div>{{contacts[chatSelezionata].name}}</div>
+                        </div>
+
+                        <div class="d-flex w-5x100 justify-content-between">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="col debug img-bg-chat">
+
+
+                    </div>
+
+                    <div class="col debug bg-grey2 h-70px d-flex align-items-center justify-content-between">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <input type="text" placeholder="   Scrivi un mesaggio" class="w-900px border-0 rounded-3 h-50">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>  -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

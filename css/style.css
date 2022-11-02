@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .debug{
+    border: 1px solid black;
+    min-height: 50px;
+} */
+
+:root{
+
+    --my-green: #00A884;
+    --my-darkgreen: #008069;
+    --my-lightgreen: #D9FDD3;
+
+    --my-white: white;
+    --my_black: black;
+
+    --my-grey1: #E2E1DE;
+    --my-grey2: #F0F2F5;
+    --my-grey3: #F5F6F6;
+    --my-grey4: #54656F;
+    --my-grey5: #ced0d1;
+
+    --my-azure: #53BDEB;
+
+}
+
+.app-container{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(226,225,222);
+    background: linear-gradient(0deg, rgba(226,225,222,1) 0%, rgba(226,225,222,1) 82%, rgba(0,168,132,1) 81%);
+}
+
+#app{
+    margin: 0 auto;
+    width: 85%;
+    height: 95%;
+}
+
+.bg-grey2{
+    background-color: var(--my-grey2);
+}
+
+.bg-white{
+    background-color: var(--my-white);
+}
+
+.img-bg-chat{
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 140px);
+}
+
+.h-25px{
+    height: 25px;
+}
+
+.h-50px{
+    height: 50px;
+}
+
+.h-70px{
+    height: 70px;
+}
+
+.h-80px{
+    height: 80px;
+}
+
+.w-900px{
+    width: 900px;
+}
+
+.w-5x100{
+    width: 5%;
+}
+
+img{
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.chat-contact img{
+    width: 60px;
+}
+
+i{
+    font-size: 25px;
+    color: var(--my-grey4);
+    cursor: pointer;
+}
+
+.chat-hover :hover{
+    background-color: var(--my-grey3);
+}
+
+.select-chat-contatto{
+    border: none;
+    background-color: var(--my-grey3);
+    width: 18px;
+}
